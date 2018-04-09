@@ -29,6 +29,11 @@ module.exports.getProductByName = function(name,callback){
 module.exports.addproduct = function(newProduct,callback){
     newProduct.save(callback); 
 }
+
+module.exports.getallproducts = function(callback){
+    Product.find(callback);
+}
+
 /*module.exports.getProductByCategory = function(category,callback){
     
 }

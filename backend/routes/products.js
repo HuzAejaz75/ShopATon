@@ -22,5 +22,15 @@ router.post('/addtocatalog',(req,res,next)=>{
 
     })
 });
+router.get('/getallproducts',(req,res,next)=>{
+    Product.getallproducts((err,products)=>{
+        if(err){
+            res.json({success:false,msg:'failed to add product'})
+        }
+        else{
+            res.json({success:true,data:products})
+        }  
+    })
+})
 
 module.exports = router;
