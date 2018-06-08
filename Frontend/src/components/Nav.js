@@ -83,7 +83,7 @@ handleLogout(e){
               <input type="password" ref="password"class="form-control" placeholder="Password"/>
             </div>
             <button class="btn btn-outline-primary btm-sm">
-               Login
+               Logins
             </button>
            
           </div>
