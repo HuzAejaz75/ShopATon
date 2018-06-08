@@ -15,7 +15,7 @@ class Cart extends Component {
   componentWillMount(){
     axios.get("http://localhost:8080/cart/getallproducts").then((res)=>{
       this.setState({ordered:res.data.items})
-    
+      
   });
   }
  
