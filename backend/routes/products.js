@@ -5,12 +5,13 @@ const Product = require('../Schema/schema');
 
 router.post('/addtocatalog',(req,res,next)=>{
     let product = new Product({
-        productName:req.body.name,
+        name:req.body.name,
         brand:req.body.brand,
-        category:req.body.category,
-        subcategory:req.body.subcategory,
+        quantity:req.body.quantity,
+        availability:req.body.availability,
         description:req.body.description,
-        price:req.body.price
+        price:req.body.price,
+        status:req.body.status
     });
     Product.addproduct(product,(err, product)=>{
         if(err){
@@ -20,7 +21,7 @@ router.post('/addtocatalog',(req,res,next)=>{
             res.json({success:true,msg:'product added'})
         }
 
-    })
+    });
 });
 router.get('/getallproducts',(req,res,next)=>{
     Product.getallproducts((err,products)=>{
@@ -32,5 +33,7 @@ router.get('/getallproducts',(req,res,next)=>{
         }  
     })
 })
+
+
 
 module.exports = router;
